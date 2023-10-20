@@ -4,6 +4,7 @@ import Button from "./Button";
 
 import { Product } from "@/types";
 import { AiOutlineShoppingCart } from "react-icons/ai";
+import useCart from "../hooks/useCart";
 
 interface InfoProps {
     data: Product;
@@ -12,6 +13,13 @@ interface InfoProps {
 const Info: React.FC<InfoProps> = ({
     data
 }) => {
+    
+    const cart = useCart();
+    
+    const addToCart = () => {
+        cart.addItem(data)
+    }
+    
     return ( 
         <div>
             <h1 className="text-3xl font-bold text-gray-900">{data.name}</h1>
@@ -40,7 +48,7 @@ const Info: React.FC<InfoProps> = ({
             </div>
 
             <div className="mt-10 flex items-center gap-x-3">
-                <Button className="flex items-center gap-x-2">
+                <Button onClick={addToCart} className="flex items-center gap-x-2">
                     Add To Cart
                     <AiOutlineShoppingCart size={20} />
                 </Button>
