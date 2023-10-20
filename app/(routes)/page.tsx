@@ -7,7 +7,7 @@ import ProductList from "../components/ProductList";
 export default async function Home() {
 
   const products = await getProducts({ isFeatured: true });
-  const billboard = await getBillboard(process.env.STORE_ID!);
+  const billboard = await getBillboard(process.env.BILLBOARD_ID!);
   
   return (
     <Container>
