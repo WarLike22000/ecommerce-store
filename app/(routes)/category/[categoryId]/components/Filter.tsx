@@ -5,7 +5,6 @@ import clsx from "clsx";
 
 import { Color, Size } from "@/types";
 import { useRouter, useSearchParams } from "next/navigation";
-import Button from "@/app/components/Button";
 
 interface FilterProps {
     data: (Size | Color)[];
@@ -53,14 +52,14 @@ const Filter: React.FC<FilterProps> = ({
             <div className="flex flex-wrap gap-2">
                 {data.map((filter) => (
                     <div key={filter.id} className="flex items-center">
-                        <Button
-                            className={clsx("rounded-md text-sm text-zinc-900 p-2 bg-slate-50 border border-gray-300",
+                        <div
+                            className={clsx("rounded-md text-sm text-zinc-900 p-2 bg-slate-50 border border-gray-300 w-auto border-transparent px-3 py-2 disabled:cursor-not-allowed disabled:opacity-50 font-semibold hover:opacity-75 transition",
                             selectedValue === filter.id && "bg-zinc-900 text-slate-50"
                             )}
                             onClick={() => onClick(filter.id)}
                         >
                             {filter.name}
-                        </Button>
+                        </div>
                     </div>
                 ))}
             </div>
