@@ -55,7 +55,7 @@ const Filter: React.FC<FilterProps> = ({
                         <Button
                             className={`rounded-md text-sm text-zinc-900 p-2 bg-slate-50 border border-gray-300
                             ${selectedValue === filter.id && "bg-slate-950"}
-                            ${selectedValue === filter.id && "text-red-50"}
+                            ${selectedValue === filter.id && "text-red-50/100"}
                             `}
                             onClick={() => onClick(filter.id)}
                         >
