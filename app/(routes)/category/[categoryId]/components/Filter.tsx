@@ -55,7 +55,7 @@ const Filter: React.FC<FilterProps> = ({
                     <div key={filter.id} className="flex items-center">
                         <Button
                             className={clsx("rounded-md text-sm text-zinc-900 p-2 bg-slate-50 border border-gray-300",
-                            selectedValue === filter.id && "bg-zinc-900 text-blue-800"
+                            selectedValue === filter.id && "bg-zinc-900 text-red-600"
                             )}
                             onClick={() => onClick(filter.id)}
                         >
