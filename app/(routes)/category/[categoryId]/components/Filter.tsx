@@ -1,6 +1,7 @@
 "use client"
 
 import qs from "query-string";
+import clsx from "clsx";
 
 import { Color, Size } from "@/types";
 import { useRouter, useSearchParams } from "next/navigation";
@@ -53,9 +54,9 @@ const Filter: React.FC<FilterProps> = ({
                 {data.map((filter) => (
                     <div key={filter.id} className="flex items-center">
                         <Button
-                            className={`rounded-md text-sm text-zinc-900 p-2 bg-slate-50 border border-gray-300
-                            ${selectedValue === filter.id && "bg-slate-950 text-blue-200"}
-                            `}
+                            className={clsx("rounded-md text-sm text-zinc-900 p-2 bg-slate-50 border border-gray-300",
+                            selectedValue === filter.id && "bg-zinc-900 text-slate-50"
+                            )}
                             onClick={() => onClick(filter.id)}
                         >
                             {filter.name}
