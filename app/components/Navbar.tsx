@@ -3,6 +3,7 @@ import Container from "./Container";
 import MainNav from "./MainNav";
 import getCategories from "@/app/actions/getCategories";
 import NavbarActions from "./NavbarActions";
+import Drawer from "./Drawer";
 
 const Navbar = async () => {
 
@@ -16,7 +17,11 @@ const Navbar = async () => {
                         <p className="font-bold text-xl">STORE</p>
                     </Link>
                     <MainNav data={categories} />
-                    <NavbarActions />
+                    <div className="ml-auto flex items-center">
+                        <NavbarActions />
+                        <Drawer data={categories} />
+                    </div>
+                    
                 </div>
             </Container>
         </nav>
